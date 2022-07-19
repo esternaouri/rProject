@@ -5,12 +5,7 @@ class Counter extends Component {
         counter:0
       } 
       setCounter(v,counter){
-          if (v>0){
-            counter++
-            }
-         else{
-          counter--
-         } 
+        v>0? counter++ :counter-- 
         this.setState({counter})
     }
         renderCounter(counter){
@@ -18,8 +13,8 @@ class Counter extends Component {
             return <p> "Is Not Pulsivy"</p>
         }
          renderBtn(counter){
-         return <div> <button onClick ={()=>this.setCounter(1,counter)}className="btn btn-info">+</button> 
-         <button onClick ={()=>this.setCounter(-1,counter)}className="btn btn-info">-</button> 
+         return <div> <button onClick ={()=>this.setCounter(1,counter)}className="btn btn-success"> Plus +</button> 
+         <button onClick ={()=>this.setCounter(-1,counter)}className="btn btn-danger"> Minus -</button> 
          </div>
          }
     render() { 
